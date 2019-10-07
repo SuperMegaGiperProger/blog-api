@@ -1,13 +1,14 @@
 # frozen_string_literal: true
 
 if Rails.env.development?
+  require 'annotate'
   task :set_annotation_options do
     Annotate.set_defaults(
-      'position_in_routes' => 'bottom',
-      'position_in_class' => 'bottom',
-      'position_in_test' => 'bottom',
-      'position_in_fixture' => 'bottom',
-      'position_in_factory' => 'bottom',
+      'position_in_routes' => 'after',
+      'position_in_class' => 'after',
+      'position_in_test' => 'before',
+      'position_in_fixture' => 'after',
+      'position_in_factory' => 'after',
       'show_indexes' => 'true',
       'simple_indexes' => 'false',
       'model_dir' => 'app/models',
