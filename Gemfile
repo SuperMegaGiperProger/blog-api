@@ -17,6 +17,7 @@ end
 
 group :test do
   gem 'rspec-rails', '~> 3.8.2'
+  gem 'rspec-json_expectations', '~> 2.2.0'
   gem 'shoulda-matchers', '~> 4.1.1'
 end
 
