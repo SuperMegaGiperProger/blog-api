@@ -22,7 +22,7 @@ RSpec.describe User, type: :model do
   end
 
   describe 'validations' do
-    subject { User.create login: :test_user }
+    subject { create :user }
 
     it { should validate_presence_of(:login) }
     it { should validate_uniqueness_of(:login) }
