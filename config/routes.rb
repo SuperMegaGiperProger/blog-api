@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   end
 
   resources :top_posts, only: :index
+  resources :repeated_ips, only: :index
 end
