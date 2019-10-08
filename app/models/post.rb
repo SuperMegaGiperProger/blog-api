@@ -16,7 +16,7 @@ end
 #  author_ip     :inet
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
-#  avg_rating    :float
+#  avg_rating    :float            default("0.0")
 #  ratings_sum   :integer          default("0"), not null
 #  ratings_count :integer          default("0"), not null
 #
