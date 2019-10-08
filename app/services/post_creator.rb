@@ -55,8 +55,10 @@ class PostCreator
 
     @errors ||= []
 
-    @params.slice(:title, :body, :author_login).each do |param, value|
-      @errors.push("#{param} can't be blank") if value.blank?
+    %i[title body author_login].each do |param_key|
+      value = @params[param_key]
+
+      @errors.push("#{param_key} can't be blank") if value.blank?
     end
 
     @params_valid = @errors.blank?

@@ -27,6 +27,16 @@ RSpec.describe PostsController, type: :controller do
       end
     end
 
+    context 'when title is not present' do
+      let(:post_attributes) { attributes_for(:post).except(:title) }
+
+      it { expect(response.status).to eq(422) }
+
+      it 'responds with error' do
+        expect(response.body).to include_json(errors: ['title can\'t be blank'])
+      end
+    end
+
     context 'when body is blank' do
       let(:post_attributes) { attributes_for :post, body: ' ' }
 
