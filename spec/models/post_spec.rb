@@ -1,16 +1,18 @@
 # frozen_string_literal: true
-
 # == Schema Information
 #
 # Table name: posts
 #
-#  id         :integer          not null, primary key
-#  user_id    :integer          not null
-#  title      :string
-#  body       :string
-#  author_ip  :inet
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id            :integer          not null, primary key
+#  user_id       :integer          not null
+#  title         :string
+#  body          :string
+#  author_ip     :inet
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#  avg_rating    :float
+#  ratings_sum   :integer          default("0"), not null
+#  ratings_count :integer          default("0"), not null
 #
 # Indexes
 #

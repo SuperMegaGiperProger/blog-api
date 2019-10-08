@@ -16,6 +16,7 @@ group :development, :test do
 end
 
 group :test do
+  gem 'database_cleaner', '~> 1.7.0'
   gem 'rspec-json_expectations', '~> 2.2.0'
   gem 'rspec-rails', '~> 3.8.2'
   gem 'shoulda-matchers', '~> 4.1.1'
