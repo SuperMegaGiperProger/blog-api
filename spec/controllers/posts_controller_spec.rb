@@ -9,7 +9,7 @@ RSpec.describe PostsController, type: :controller do
     let(:post_attributes) { attributes_for :post }
     let(:author_login) { 'test_login' }
 
-    subject { post :create, params: { post: params } }
+    subject { post :create, params: params }
 
     before do |test|
       next if test.metadata[:skip_before]
