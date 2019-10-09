@@ -229,6 +229,13 @@ ALTER TABLE ONLY public.users
 
 
 --
+-- Name: index_posts_on_author_ip; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_posts_on_author_ip ON public.posts USING btree (author_ip);
+
+
+--
 -- Name: index_posts_on_user_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -283,6 +290,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20191006175729'),
 ('20191006175735'),
 ('20191008192540'),
-('20191008222343');
+('20191008222343'),
+('20191009121222');
 
 

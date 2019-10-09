@@ -16,7 +16,8 @@
 #
 # Indexes
 #
-#  index_posts_on_user_id  (user_id)
+#  index_posts_on_author_ip  (author_ip)
+#  index_posts_on_user_id    (user_id)
 #
 
 require 'rails_helper'
