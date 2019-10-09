@@ -12,7 +12,9 @@ class RepeatedIpsController < ApplicationController
       WHERE ip_with_count.count > 1 ORDER BY ip_with_count.author_ip
     SQL
 
-    result = res.to_a.group_by { |row| row['author_ip'] }.transform_values { |val| val.map { |v| v['login'] } }
+    result = res.to_a
+                .group_by { |row| row['author_ip'] }
+                .map { |ip, datas| { ip: ip, logins: datas.map { |data| data['login'] } } }
 
     render json: result
   end

@@ -38,7 +38,7 @@ RSpec.describe RepeatedIpsController, type: :controller do
     end
 
     it 'returns ips, used by multiple users' do
-      result = repeated_ips.transform_values { |users| users.map(&:login) }.stringify_keys
+      result = repeated_ips.map { |ip, users| { 'ip' => ip.to_s, 'logins' => users.map(&:login) } }
 
       expect(JSON.parse(response.body)).to match(result)
     end
