@@ -66,8 +66,8 @@ WITH min_groups_ids AS (
       u.id,
       MIN(u2.id) AS nearest_id,
       u.group_id
-    FROM users2 u
-    LEFT JOIN users2 u2 ON u2.group_id = u.group_id AND u2.id <= u.id
+    FROM users u
+    LEFT JOIN users u2 ON u2.group_id = u.group_id AND u2.id <= u.id
     WHERE u2.id >= u.id - 1
     GROUP BY u.id, u.group_id
     ORDER BY u.id
@@ -83,7 +83,7 @@ WITH min_groups_ids AS (
       u5.id,
       MAX(min_groups_ids.rank) AS rank,
       u5.group_id
-    FROM users2 u5
+    FROM users u5
     LEFT JOIN min_groups_ids ON min_groups_ids.group_id = u5.group_id AND min_groups_ids.min_id <= u5.id
     GROUP BY u5.id, u5.group_id
     ORDER BY u5.id
